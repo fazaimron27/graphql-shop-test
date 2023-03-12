@@ -10,8 +10,6 @@
         pnpm install
         # or
         npm install
-        # or
-        yarn install
      ```
    - copy `.env.example` to `.env`
    - generate prisma client
@@ -19,8 +17,6 @@
          pnpm prisma generate
          # or
          npm run prisma generate
-         # or
-         yarn prisma generate
      ```
 
 3. ## Running the app
@@ -30,16 +26,12 @@
          pnpm start
          # or
          npm run start
-         # or
-         yarn start
      ```
    - start server with nodemon
      ```bash
          pnpm dev
          # or
          npm run dev
-         # or
-         yarn dev
      ```
    - server will run on `http://localhost:4000`
    - open with your favorite browser and test query with graphql playground
@@ -52,11 +44,9 @@
          pnpm test
          # or
          npm run test
-         # or
-         yarn test
      ```
 
-     > important: to run unit tests, you must run the server using `pnpm start` or `npm run start` or `yarn start`
+     > important: to run unit tests, you must run the server using `pnpm start` or `npm run start`
 
      > otherwise it will definitely error
 
