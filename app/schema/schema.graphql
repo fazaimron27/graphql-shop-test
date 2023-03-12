@@ -1,0 +1,63 @@
+type Query {
+  info: String!
+  inventories: [Inventories!]!
+  carts: [Carts!]!
+  transactions: [Transactions!]!
+}
+
+type Mutation {
+  signup(email: String!, password: String!, name: String!): AuthPayload
+  signin(email: String!, password: String!): AuthPayload
+  addInventorytoCart(sku: String!, quantity: Int!): Carts
+  removeInventoryfromCart(id: ID!): Carts
+  checkout: Transactions
+}
+
+type AuthPayload {
+  token: String
+  user: User
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  carts: [Carts!]!
+  transactions: [Transactions!]!
+}
+
+type Inventories {
+  id: ID!
+  sku: String!
+  name: String!
+  price: Float!
+  quantity: Int!
+  carts: [Carts!]!
+}
+
+type Carts {
+  id: ID!
+  userId: User
+  inventoryId: Inventories
+  quantity: Int!
+  sku: String!
+  name: String!
+  price: Float!
+  user: [User!]!
+  inventory: [Inventories!]!
+}
+
+type Transactions {
+  id: ID!
+  total: Float!
+  userId: User
+}
+
+type TransactionDetails {
+  id: ID!
+  transactionId: Transactions
+  inventoryId: Inventories
+  quantity: Int!
+  transaction: [Transactions!]!
+  inventory: [Inventories!]!
+}
