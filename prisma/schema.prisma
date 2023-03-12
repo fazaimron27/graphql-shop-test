@@ -1,0 +1,61 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Inventories {
+  id                 String               @id @default(uuid())
+  sku                String               @unique
+  name               String
+  price              Float
+  quantity           Int
+  createdAt          DateTime             @default(now())
+  updatedAt          DateTime             @updatedAt
+  Carts              Carts[]
+  TransactionDetails TransactionDetails[]
+}
+
+model Users {
+  id           String         @id @default(uuid())
+  name         String
+  email        String         @unique
+  password     String
+  Carts        Carts[]
+  Transactions Transactions[]
+}
+
+model Carts {
+  id          String      @id @default(uuid())
+  userId      String
+  inventoryId String
+  quantity    Int
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  User        Users       @relation(fields: [userId], references: [id])
+  Inventory   Inventories @relation(fields: [inventoryId], references: [id])
+}
+
+model Transactions {
+  id                 String               @id @default(uuid())
+  total              Float
+  userId             String
+  createdAt          DateTime             @default(now())
+  updatedAt          DateTime             @updatedAt
+  User               Users                @relation(fields: [userId], references: [id])
+  TransactionDetails TransactionDetails[]
+}
+
+model TransactionDetails {
+  id            String       @id @default(uuid())
+  transactionId String
+  inventoryId   String
+  quantity      Int
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  Transaction   Transactions @relation(fields: [transactionId], references: [id])
+  Inventory     Inventories  @relation(fields: [inventoryId], references: [id])
+}
