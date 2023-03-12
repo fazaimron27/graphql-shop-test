@@ -1,7 +1,7 @@
 # How to use this project
 
 1. ## Installation
-   - clone this project `git clone https://github.com/fazaimron27/kuncie-shop-test.git`
+   - clone this project `git clone https://github.com/fazaimron27/graphql-shop-test.git`
    - open using your favorite text editor
 2. ## Setup
 
