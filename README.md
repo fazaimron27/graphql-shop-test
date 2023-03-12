@@ -11,7 +11,7 @@
         # or
         npm install
      ```
-   - copy `.env.example` to `.env`
+   - copy `.env.example` to `.env` run `cp .env.example .env`
    - generate prisma client
      ```bash
          pnpm prisma generate
