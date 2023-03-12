@@ -47,6 +47,7 @@
 4. ## Testing
 
    - unit testing
+
      ```bash
          pnpm test
          # or
@@ -55,7 +56,9 @@
          yarn test
      ```
 
-   <!-- Endpoint API Table -->
+     > important: to run unit tests, you must run the server using `pnpm start` or `npm run start` or `yarn start`
+
+     > otherwise it will definitely error
 
 5. ## GraphQL Documentation
 
