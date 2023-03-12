@@ -1,0 +1,30 @@
+{
+  "name": "kuncie-shop-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node app/server.js",
+    "dev": "npx nodemon app/server.js",
+    "prisma": "npx prisma",
+    "test": "jest --rootDir app/tests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^4.11.0",
+    "apollo-server": "^2",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.3",
+    "graphql": "^14.6.0",
+    "jest-json-schema": "^6.1.0",
+    "jsonwebtoken": "^9.0.0",
+    "node-fetch": "2"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "nodemon": "^2.0.21",
+    "prisma": "^4.11.0"
+  }
+}
