@@ -14,6 +14,14 @@
         yarn install
      ```
    - copy `.env.example` to `.env`
+   - generate prisma client
+     ```bash
+         pnpm prisma generate
+         # or
+         npm run prisma generate
+         # or
+         yarn prisma generate
+     ```
 
 3. ## Running the app
 
